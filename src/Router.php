@@ -1,7 +1,12 @@
 <?php
+include('View/View.php');
+include('control/Controller.php');
 class Router{
     public function main (){
-        echo 'jhgfdjvgjd';
+        $view = new View() ;
+        $controller = new Controller($view);
+        $controller->showInformation("medor");
+
 
     }
 }

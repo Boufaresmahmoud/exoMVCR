@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4ae3f409-a330-4198-9cb8-1a15a1d5cb1d" name="boufares">
+        <fileTransfer rootFolder="/www-dev/exoMVCR" accessType="SFTP" host="dev-boufare231.users.info.unicaen.fr" port="22" sshConfigId="64d73614-4e40-4107-83f7-3edb8486facc" sshConfig="boufare231@dev-boufare231.users.info.unicaen.fr:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
