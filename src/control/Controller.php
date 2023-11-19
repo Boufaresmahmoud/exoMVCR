@@ -5,13 +5,17 @@ include('model/Animal.php');
 class Controller{
     private $view ;
     private $animalsTab;
-    public function __construct($view){
+    private $animalStorage;
+    public function __construct($view, $animalStorage){
         $this->view = $view ;
         $this->animalsTab = array(
             'medor' => new Animal('Médor', 'chien', 5),
             'felix' => new Animal('Felix', 'chat', 3),
             'denver' => new Animal ('Denver', 'dinosaure', 65)
+
         );
+
+        $this->animalStorage = $animalStorage;
     }
 
     public function showInformation($id)
