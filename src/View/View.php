@@ -20,4 +20,13 @@ class View{
     public function prepareUnknownAnimalPage(){
         echo "erreur";
     }
+
+    public function prepareListPage($tab){
+        $content = "<ul>";
+        foreach ($tab as $animal) {
+            $content = "<a href='https://dev-boufare231.users.info.unicaen.fr/exoMVCR/site.php?id=" . strtolower($animal->getName()) . "'>".$animal->getName()."</a><br>";
+            $content .= "</ul>";
+        echo $content;
+    }
+}
 }

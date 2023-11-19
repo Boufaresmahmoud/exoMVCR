@@ -7,6 +7,9 @@ class Router{
         $controller = new Controller($view);
         if(key_exists('id',$_GET)){
             $controller->showInformation($_GET['id']);
+        }
+        else if (key_exists('liste',$_GET)){
+            $controller->showList();
         }else{
             $view->homePage();
         }

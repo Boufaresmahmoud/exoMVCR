@@ -30,6 +30,10 @@ class Controller{
         $this->view->render();
     }
 
+    public function showList(){
+        $this->view->prepareListPage($this->animalsTab);
+    }
+
 
 
 
