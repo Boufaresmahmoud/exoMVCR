@@ -10,8 +10,8 @@ class View{
         $this->title = $title ;
         $this->content = $content ;
     }
-    public function prepareAnimalPage($name , $species){
-        echo $name ." est un animal de l'espèce  ". $species ;
+    public function prepareAnimalPage($animal){
+        echo $animal->getName() ." est un animal de l'espèce  ". $animal->getSpecies() ." et a ". $animal->getAge() ." ans.";
     }
     public function homePage(){
         echo "home page";

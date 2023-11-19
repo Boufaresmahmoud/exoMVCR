@@ -1,14 +1,17 @@
 <?php
 
+include('model/Animal.php');
+
 class Controller{
     private $view ;
-    private $animalsTab= array(
-        'medor' => array('Médor', 'chien'),
-        'felix' => array('Félix', 'chat'),
-        'denver' => array('Denver', 'dinosaure'),
-    );
+    private $animalsTab;
     public function __construct($view){
         $this->view = $view ;
+        $this->animalsTab = array(
+            'medor' => new Animal('Médor', 'chien', 5),
+            'felix' => new Animal('Felix', 'chat', 3),
+            'denver' => new Animal ('Denver', 'dinosaure', 65)
+        );
     }
 
     public function showInformation($id)
@@ -17,7 +20,7 @@ class Controller{
         // Check if the provided 'id' exists in the animals array
         if (array_key_exists($id, $this->animalsTab)) {
             $animalInfo = $this->animalsTab[$id];
-            $this->view->prepareAnimalPage($animalInfo[0], $animalInfo[1]);
+            $this->view->prepareAnimalPage($animalInfo);
         } else {
             // Display an error page for unknown animals
             $this->view->prepareUnknownAnimalPage();
