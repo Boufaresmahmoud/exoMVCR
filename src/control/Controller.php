@@ -11,9 +11,22 @@ class Controller{
         $this->view = $view ;
     }
 
-    public function showInformation($id) {
-        $this->view->prepareAnimalPage("Médor", "chien");
+    public function showInformation($id)
+    {
+
+        // Check if the provided 'id' exists in the animals array
+        if (array_key_exists($id, $this->animalsTab)) {
+            $animalInfo = $this->animalsTab[$id];
+            $this->view->prepareAnimalPage($animalInfo[0], $animalInfo[1]);
+        } else {
+            // Display an error page for unknown animals
+            $this->view->prepareUnknownAnimalPage();
+        }
+
+        // Render the view
+        $this->view->render();
     }
+
 
 
 

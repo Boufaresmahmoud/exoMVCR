@@ -5,8 +5,16 @@ class Router{
     public function main (){
         $view = new View() ;
         $controller = new Controller($view);
-        $controller->showInformation("medor");
+        if(key_exists('id',$_GET)){
+            $controller->showInformation($_GET['id']);
+        }else{
+            $view->homePage();
+        }
 
 
+    }
+
+    public function url($id){
+        return "https://dev-boufare231.users.info.unicaen.fr/exoMVCR/site.php?id=".$id;
     }
 }

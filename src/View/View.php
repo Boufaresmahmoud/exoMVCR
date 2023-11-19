@@ -11,7 +11,10 @@ class View{
         $this->content = $content ;
     }
     public function prepareAnimalPage($name , $species){
-        echo $name .' ceci est un '. $species ;
+        echo $name ." est un animal de l'espèce  ". $species ;
+    }
+    public function homePage(){
+        echo "home page";
     }
 
     public function prepareUnknownAnimalPage(){
